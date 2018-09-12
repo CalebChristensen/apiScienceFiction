@@ -1,38 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>API Challenge</title>
-    <script src="brandNew.css"></script>
+    <link rel="stylesheet" href="brandNew.css">
 </head>
+
 <body>
-    <div class="wrapper">
+    <div class="bgimg-1">
+        <div class="caption">
+            <span class="border">API Challenge</span>
+        </div>
+    </div>
+    <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+        <h3 style="text-align:center;">Enter the name of your favorite Band:</h3>
         <div class="controls">
             <!--Search Form-->
-            <form>
-                <p>
-                    <label for="search">Enter the name of your favorite Band: </label>
-                    <input type="text" id="search" class="search" required>
-                </p>
+            <form id="questions">
+                <p></p>
+                <center>
+                    <input type="text" id="search" class="search" required style="text-align: center;">
+                
                 <p>
                     <button class="submit">Submit search</button>
                 </p>
+                </center>
             </form>
+            
         </div>
         <!--Results Section-->
         <div class="results">
             <!--Results Navigation-->
             <nav>
-                <button class="prev">Previous 10</button>
-                <button class="next">Next 10</button>
+
             </nav>
             <!--Results From Request-->
-            <section>
-
+            <section style="text-align:center;">
             </section>
         </div>
-    </div> 
-<script src="scienceFitction.js"></script>
+    </div>
+    <div class="bgimg-2">
+        <div class="caption">
+            <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">Take Your Head
+                Apart</span>
+        </div>
+    </div>
+    <div style="position:relative;">
+        <div style="background-color: #f7f7f7; text-align:center;padding:50px 80px;text-align: justify;">
+        </div>
+    </div>
+    <div class="bgimg-1">
+        <div class="caption">
+            <span class="border">Free Your Own Heart</span>
+        </div>
+    </div>
+    <script src="scienceFitction.js"></script>
+
 </html>

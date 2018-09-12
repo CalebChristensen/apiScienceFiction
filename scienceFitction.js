@@ -7,26 +7,16 @@ const searchForm = document.querySelector('form');
 const submitBtn = document.querySelector('.submit');
 
 //RESULTS NAVIGATION
-const nextBtn = document.querySelector('.next');
-const previousBtn = document.querySelector('.prev');
 const nav = document.querySelector('nav');
 
 //RESULTS SECTION
 const section = document.querySelector('section');
-nav.style.display = 'none';
-let pageNumber = 0;
-console.log('pageNumber', pageNumber);
-let displayNav = false;
 searchForm.addEventListener('submit', fetchResults);
-nextBtn.addEventListener('click', nextPage);
-previousBtn.addEventListener('click', previousPage);
 
 function fetchResults(e) {
     e.preventDefault();
-    console.log(e)
 
     url = `${baseURL}"${searchTerm.value}"`;
-    console.log(url);
 
     fetch(url)
       .then(function (result) {
@@ -40,15 +30,21 @@ function fetchResults(e) {
   }
   
 function displayResults(json) {
-    console.log("DisplayResults", json);
-    console.log(json[0]);
+    while (section.firstChild) {
+    section.removeChild(section.firstChild);
+    }
+    let heading = document.createElement('p')
+    let songTitles = document.createElement('ol')
 
-    for (let i = 0; i < json.length; i++) {
-        console.log(json[i].title)
-}};
-function nextPage(){
-    console.log("Next button clicked");
-    } 
-    function previousPage(){
-    console.log("Next button clicked");
-    } 
+    heading.textContent = `Songs by ${searchTerm.value}:`;
+    section.appendChild(heading);
+    section.appendChild(songTitles);
+
+        for (let i = 0; i < json.length; i++) {
+        let songNames = json[i].title;
+        console.log(songNames)
+        let songList = document.createElement('li')
+        songList.textContent = songNames;
+        songTitles.appendChild(songList);
+    }
+};
